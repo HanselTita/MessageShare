@@ -23,7 +23,12 @@ class MainActivity : AppCompatActivity() {
             val message: String = etUserMessage.text.toString()
             Toast.makeText(this, "message send!", Toast.LENGTH_SHORT).show()
             val intent = Intent (this, SecondActivity:: class.java)
+            intent.putExtra("user_message", message)
             startActivity(intent)
+            /**
+             * Explicit Intent is when you know your target activity. When you don't know your
+             * target activity, it is called Implicit intent.
+             */
         }
     }
 }
